@@ -50,8 +50,8 @@ WORKDIR /app
 # copiar apenas dependências primeiro
 COPY package*.json ./
 
-# usar npm ci é mais estável que npm install
-RUN npm ci --legacy-peer-deps
+# instalar dependências com npm install
+RUN npm install --legacy-peer-deps --production=false && npm cache clean --force
 
 # copiar código
 COPY . .
