@@ -34,7 +34,7 @@
     "@whiskeysockets/baileys": "^6.7.9",
     "axios": "^1.13.5",
     "bcryptjs": "^2.4.3",
-    "bull": "^4.16.7",
+    "bull": "^4.16.5",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "cron": "^3.2.3",
