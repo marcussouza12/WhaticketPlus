@@ -16,6 +16,9 @@
   },
   "author": "",
   "license": "MIT",
+  "engines": {
+    "node": ">=20 <21"
+  },
   "dependencies": {
     "@adiwajshing/baileys": "^3.5.3",
     "@adiwajshing/keyed-db": "^0.2.4",
@@ -84,7 +87,7 @@
     "@types/jsonwebtoken": "^9.0.7",
     "@types/multer": "^1.4.12",
     "@types/mustache": "^4.2.5",
-    "@types/node": "^22.10.2",
+    "@types/node": "^20.19.33",
     "@types/node-fetch": "^2.6.12",
     "@types/request": "^2.48.12",
     "@types/socketio-jwt-auth": "^0.0.9",
