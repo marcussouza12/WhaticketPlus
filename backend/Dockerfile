@@ -1,8 +1,12 @@
 FROM node:18-bullseye-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV NODE_ENV=production
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV CHROME_BIN=/usr/bin/chromium
+ENV PYTHON=/usr/bin/python3
 
-# ===== dependências de build (node-gyp) =====
+# ===== dependências do sistema =====
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 \
     make \
@@ -13,13 +17,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     ca-certificates \
     dumb-init \
-    # ===== libs necessárias para canvas/sharp/whatsapp =====
     libcairo2-dev \
     libpango1.0-dev \
     libjpeg-dev \
     libgif-dev \
     librsvg2-dev \
-    # ===== chromium =====
     chromium \
     fonts-liberation \
     libasound2 \
@@ -43,26 +45,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     xdg-utils \
     && rm -rf /var/lib/apt/lists/*
 
-# puppeteer não baixar chromium
-ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-ENV CHROME_BIN=/usr/bin/chromium
-ENV NODE_ENV=production
-
 WORKDIR /app
 
-# importante: copiar apenas package primeiro
+# copiar apenas dependências primeiro
 COPY package*.json ./
 
-# resolver node-gyp
-RUN npm config set python /usr/bin/python3
-
-# instalar dependências
-RUN npm install --legacy-peer-deps
+# usar npm ci é mais estável que npm install
+RUN npm ci --legacy-peer-deps
 
 # copiar código
 COPY . .
 
-# criar usuário
 RUN useradd -m whaticket
 RUN chown -R whaticket:whaticket /app
 USER whaticket
