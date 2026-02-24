@@ -90,7 +90,6 @@
     "@types/node": "^20.19.33",
     "@types/node-fetch": "^2.6.12",
     "@types/request": "^2.48.12",
-    "@types/socketio-jwt-auth": "^0.0.9",
     "@types/supertest": "^6.0.2",
     "@types/uuid": "^10.0.0",
     "@types/validator": "^13.12.2",
