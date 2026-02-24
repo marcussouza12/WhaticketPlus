@@ -1,4 +1,4 @@
-FROM node:18-bullseye-slim
+FROM node:24-bullseye-slim
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV NODE_ENV=production
