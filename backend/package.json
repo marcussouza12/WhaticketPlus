@@ -27,7 +27,7 @@
     "@hapi/boom": "^10.0.1",
     "@sentry/node": "^8.45.0",
     "@sentry/react": "^8.45.0",
-    "@socket.io/admin-ui": "^0.7.2",
+    "@socket.io/admin-ui": "^0.5.1",
     "@thream/socketio-jwt": "^3.1.0",
     "@types/lodash": "^4.17.14",
     "@types/pino": "^7.0.5",
