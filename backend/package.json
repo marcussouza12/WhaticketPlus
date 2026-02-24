@@ -20,7 +20,7 @@
     "@adiwajshing/baileys": "^3.5.3",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
-    "@google-cloud/speech": "^6.8.0",
+    "@google-cloud/speech": "^7.2.1",
     "@hapi/boom": "^10.0.1",
     "@sentry/node": "^8.45.0",
     "@sentry/react": "^8.45.0",
