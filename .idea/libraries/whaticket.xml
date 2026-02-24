@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="whaticket">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/whaticket.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
